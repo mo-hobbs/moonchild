@@ -15,15 +15,13 @@ import {
   IonContent,
   IonList,
   IonItem,
-  IonMenuButton,
-  IonButtons,
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, homeSharp, settingsSharp, square, starSharp } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import { homeSharp, settingsSharp, starSharp } from 'ionicons/icons';
+import Tab1Home from './pages/Home';
+import Tab2 from './pages/Meditation';
+import Tab3 from './pages/Settings';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -56,9 +54,9 @@ const App: React.FC = () => (
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItem routerLink="/tab1">Home</IonItem>
-          <IonItem routerLink="/tab2">Meditations</IonItem>
-          <IonItem routerLink="/tab3">Settings</IonItem>
+          <IonItem routerLink="/home">Home</IonItem>
+          <IonItem routerLink="/meditation">Meditation</IonItem>
+          <IonItem routerLink="/settings">Settings</IonItem>
         </IonList>
       </IonContent>
     </IonMenu>
@@ -66,30 +64,30 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet id="main">
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route exact path="/home">
+            <Tab1Home />
           </Route>
-          <Route exact path="/tab2">
+          <Route exact path="/meditation">
             <Tab2 />
           </Route>
-          <Route path="/tab3">
+          <Route path="/settings">
             <Tab3 />
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/home" />
           </Route>
         </IonRouterOutlet>
         
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="home" href="/home">
             <IonIcon aria-hidden="true" icon={homeSharp} />
             <IonLabel>Welcome</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="meditation" href="/meditation">
             <IonIcon aria-hidden="true" icon={starSharp} />
-            <IonLabel>Meditations</IonLabel>
+            <IonLabel>Meditation</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
+          <IonTabButton tab="settings" href="/settings">
             <IonIcon aria-hidden="true" icon={settingsSharp} />
             <IonLabel>Settings</IonLabel>
           </IonTabButton>

@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 import {
+  IonButtons,
   IonContent,
   IonHeader,
+  IonMenuButton,
   IonPage,
   IonTitle,
   IonToolbar,
-  IonButtons,
-  IonMenuButton,
-} from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab1.css';
+} from "@ionic/react";
+import ExploreContainer from "../components/ExploreContainer";
+import "./Meditation.css";
 
-const Tab1: React.FC = () => {
+const Meditation: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -19,19 +19,19 @@ const Tab1: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Meditation</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Welcome</IonTitle>
+            <IonTitle size="large">Meditation</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        <ExploreContainer name="Tab 2 page" />
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default Meditation;
