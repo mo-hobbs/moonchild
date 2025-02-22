@@ -1,0 +1,7 @@
+{
+  "name": "myMeditationApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
