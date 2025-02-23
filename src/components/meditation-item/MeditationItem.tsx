@@ -11,7 +11,7 @@ const MeditationItem: React.FC = () => {
   return (
     <IonCard>
       <IonCardHeader>
-        <IonCardTitle>Let's Breathe</IonCardTitle>
+        <IonCardTitle>Let&apos;s Breathe</IonCardTitle>
         <IonCardSubtitle>5 minutes</IonCardSubtitle>
       </IonCardHeader>
 

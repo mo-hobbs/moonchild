@@ -18,7 +18,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { homeSharp, infiniteSharp, settingsSharp, starSharp } from 'ionicons/icons';
+import { settingsSharp, starSharp, timeOutline } from 'ionicons/icons';
 import Home from './pages/Home';
 import Meditation from './pages/Meditation';
 import Settings from './pages/Settings';
@@ -84,7 +84,7 @@ const App: React.FC = () => (
             <IonLabel>Welcome</IonLabel>
           </IonTabButton>
           <IonTabButton tab="meditation" href="/meditation">
-            <IonIcon aria-hidden="true" icon={infiniteSharp} />
+            <IonIcon aria-hidden="true" icon={timeOutline} />
             <IonLabel>Meditation</IonLabel>
           </IonTabButton>
           <IonTabButton tab="settings" href="/settings">

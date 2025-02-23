@@ -7,7 +7,6 @@ const EndMeditationButton: React.FC = () => {
       <IonButton
         id="open-action-sheet"
         color="danger"
-        onClick={() => {}}
         shape="round"
         fill="outline">
         End
