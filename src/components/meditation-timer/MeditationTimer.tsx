@@ -1,5 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from "@ionic/react";
+import React, {useState} from "react";
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButton,
+  IonIcon,
+} from "@ionic/react";
+import "./MeditationTimer.css";
+import {refreshOutline} from "ionicons/icons";
+import EndMeditationButton from "../end-meditation-button/EndMeditationButton";
 
 const MeditationTimer: React.FC = () => {
   const [timer, setTimer] = useState(300); // 5 minutes (300 seconds)
@@ -51,6 +62,14 @@ const MeditationTimer: React.FC = () => {
     return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
+  const togglePlayPause = () => {
+    if (isRunning) {
+      stopTimer();
+    } else {
+      startTimer();
+    }
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -58,21 +77,35 @@ const MeditationTimer: React.FC = () => {
           <IonTitle>Meditation Timer</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
-        <div className="timer-display">
-          <h1>{formatTime(timer)}</h1>
+      <IonContent className="ion-padding meditation-timer-container">
+        <div>
+          <h1 className="timer-display">{formatTime(timer)}</h1>
         </div>
 
         <div className="button-group">
-          <IonButton color="success" onClick={startTimer} disabled={isRunning}>
-            Start
-          </IonButton>
-          <IonButton color="danger" onClick={stopTimer} disabled={!isRunning}>
-            Stop
-          </IonButton>
-          <IonButton color="medium" onClick={resetTimer}>
-            Reset
-          </IonButton>
+          <div>
+            <IonButton
+              className="start-button"
+              color="primary"
+              size="large"
+              shape="round"
+              onClick={togglePlayPause}>
+              {isRunning ? "Pause" : "Start"}
+            </IonButton>
+          </div>
+          <div className="button-row">
+            <IonButton
+              color="primary"
+              onClick={resetTimer}
+              shape="round"
+              fill="outline"
+              className="reset-button">
+              Reset
+              <IonIcon icon={refreshOutline} size="large" slot="start" />
+            </IonButton>
+
+            <EndMeditationButton />
+          </div>
         </div>
       </IonContent>
     </IonPage>

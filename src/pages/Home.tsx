@@ -8,9 +8,8 @@ import {
   IonButtons,
   IonMenuButton,
 } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
-import MeditationTimer from './meditation-timer/MeditationTimer';
+import MeditationTimer from '../components/meditation-timer/MeditationTimer';
 
 const Home: React.FC = () => {
   return (

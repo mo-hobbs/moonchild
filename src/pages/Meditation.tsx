@@ -1,18 +1,15 @@
 import React from "react";
 import {
-  IonButton,
   IonButtons,
   IonContent,
   IonHeader,
-  IonIcon,
   IonMenuButton,
   IonPage,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
 import "./Meditation.css";
-import MeditationTimer from "./meditation-timer/MeditationTimer";
-import {playSharp} from "ionicons/icons";
+import MeditationItem from "../components/meditation-item/MeditationItem";
 
 const Meditation: React.FC = () => {
   return (
@@ -31,11 +28,7 @@ const Meditation: React.FC = () => {
             <IonTitle size="large">Meditation</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonButtons>
-          <IonButton>
-            <IonIcon icon={playSharp} />
-          </IonButton>
-        </IonButtons>
+        <MeditationItem />
       </IonContent>
     </IonPage>
   );
