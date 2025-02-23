@@ -10,6 +10,7 @@ import {
 } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
+import MeditationTimer from './meditation-timer/MeditationTimer';
 
 const Home: React.FC = () => {
   return (
@@ -28,7 +29,7 @@ const Home: React.FC = () => {
             <IonTitle size="large">Welcome</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        <MeditationTimer />
       </IonContent>
     </IonPage>
   );

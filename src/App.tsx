@@ -18,10 +18,10 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { homeSharp, settingsSharp, starSharp } from 'ionicons/icons';
-import Tab1Home from './pages/Home';
-import Tab2 from './pages/Meditation';
-import Tab3 from './pages/Settings';
+import { homeSharp, infiniteSharp, settingsSharp, starSharp } from 'ionicons/icons';
+import Home from './pages/Home';
+import Meditation from './pages/Meditation';
+import Settings from './pages/Settings';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -65,13 +65,13 @@ const App: React.FC = () => (
       <IonTabs>
         <IonRouterOutlet id="main">
           <Route exact path="/home">
-            <Tab1Home />
+            <Home />
           </Route>
           <Route exact path="/meditation">
-            <Tab2 />
+            <Meditation />
           </Route>
           <Route path="/settings">
-            <Tab3 />
+            <Settings />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />
@@ -80,11 +80,11 @@ const App: React.FC = () => (
         
         <IonTabBar slot="bottom">
           <IonTabButton tab="home" href="/home">
-            <IonIcon aria-hidden="true" icon={homeSharp} />
+            <IonIcon aria-hidden="true" icon={starSharp} />
             <IonLabel>Welcome</IonLabel>
           </IonTabButton>
           <IonTabButton tab="meditation" href="/meditation">
-            <IonIcon aria-hidden="true" icon={starSharp} />
+            <IonIcon aria-hidden="true" icon={infiniteSharp} />
             <IonLabel>Meditation</IonLabel>
           </IonTabButton>
           <IonTabButton tab="settings" href="/settings">
