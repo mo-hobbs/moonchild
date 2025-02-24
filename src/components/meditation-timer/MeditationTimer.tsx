@@ -6,9 +6,17 @@ import {
   IonTitle,
   IonContent,
   IonButton,
+  IonItem,
+  IonLabel,
+  IonAvatar,
 } from "@ionic/react";
 import "./MeditationTimer.css";
 import EndMeditationButton from "../end-meditation-button/EndMeditationButton";
+import { Button } from "../../stories/Button";
+
+const user = {
+  name: "Morgie",
+};
 
 const MeditationTimer: React.FC = () => {
   const [timer, setTimer] = useState(300); // 5 minutes (300 seconds)
@@ -80,12 +88,21 @@ const MeditationTimer: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
+      {/* <IonHeader>
         <IonToolbar>
           <IonTitle>Meditation Timer</IonTitle>
         </IonToolbar>
-      </IonHeader>
+      </IonHeader> */}
       <IonContent className="ion-padding">
+        <IonItem lines="none">
+          <IonAvatar aria-hidden="true" slot="start">
+            <img
+              alt=""
+              src="https://ionicframework.com/docs/img/demos/avatar.svg"
+            />
+          </IonAvatar>
+          <IonLabel>Welcome back, {user.name}</IonLabel>
+        </IonItem>
         <div className="meditation-timer-container">
           <div>
             <h1 className="timer-display">{formatTime(timer)}</h1>
@@ -102,6 +119,7 @@ const MeditationTimer: React.FC = () => {
                 {buttonText()}
               </IonButton>
             </div>
+            <Button label="Start" primary backgroundColor="var(--ion-color-primary)" />
             <div className="button-row">
               <IonButton
                 color="primary"

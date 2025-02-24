@@ -14,14 +14,11 @@ import MeditationTimer from '../components/meditation-timer/MeditationTimer';
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
+      {/* <IonHeader>
         <IonToolbar>
-          <IonButtons slot="start">
-            <IonMenuButton />
-          </IonButtons>
-          <IonTitle>Welcome</IonTitle>
+          <IonTitle className="ion-text-center">Follow Your Breath</IonTitle>
         </IonToolbar>
-      </IonHeader>
+      </IonHeader> */}
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
